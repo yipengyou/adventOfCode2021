@@ -6,13 +6,6 @@ dp = dp.split(',')
 original = len(dp)
 for a in range(len(dp)):
     dp[a] = int(dp[a])
-    
-# for _ in range(256):
-#     for a in range(len(dp)):
-#         dp[a] -= 1
-#         if dp[a] == -1:
-#             dp[a] = 6
-#             dp.append(8)
 
 
 d = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0}
