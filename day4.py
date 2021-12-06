@@ -21,7 +21,8 @@ for a in file:
                 for x in range(len(bingo)):
                     for y in range(len(bingo[x])):
                         if bingo[x][y] == inputs[i]:
-                            bingo[x].pop(y)
+                            bingo[x][y] = 'a'
+                for 
                 for w in bingo:
                     if w == []:
                         ans.append((i, inputs[i] * sum([q for e in bingo for q in e])))
