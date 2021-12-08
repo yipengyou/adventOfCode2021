@@ -22,8 +22,14 @@ for a in file:
                 
                 
                 for x in range(len(bingo)):
+<<<<<<< HEAD
                     bingo[x] = [[] if y == inputs[i] else y for y in bingo[x]]
                     
+=======
+                    for y in range(len(bingo[x])):
+                        if bingo[x][y] == inputs[i]:
+                            bingo[x][y] = 'a'
+>>>>>>> 259c5163faf72456b22da87302c94e1f4fd44f2c
                 for w in bingo:
                     if w == [[], [], [], [], []]:
                         ans.append((int(i), int(inputs[i]) * sum([int(q) for e in bingo for q in e if type(q) == type('a')])))
@@ -46,4 +52,8 @@ for a in file:
             appended = False
 print(file.read())
 ans.sort()
+<<<<<<< HEAD
 print(ans[-1][1], inputs[ans[-1][0]])
+=======
+print(ans)
+>>>>>>> 259c5163faf72456b22da87302c94e1f4fd44f2c
