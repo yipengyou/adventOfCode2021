@@ -1,5 +1,6 @@
 file = open('day4_inputs.txt')
 inputs = file.readline()
+inputs = inputs.split(',')
 cnt = 0
 bingo = []
 ans = []
@@ -18,26 +19,31 @@ for a in file:
 
         if cnt == 5:
             for i in range(len(inputs)):
+                
+                
                 for x in range(len(bingo)):
-                    for y in range(len(bingo[x])):
-                        if bingo[x][y] == inputs[i]:
-                            bingo[x][y] = 'a'
-                for 
+                    bingo[x] = [[] if y == inputs[i] else y for y in bingo[x]]
+                    
                 for w in bingo:
-                    if w == []:
-                        ans.append((i, inputs[i] * sum([q for e in bingo for q in e])))
+                    if w == [[], [], [], [], []]:
+                        ans.append((int(i), int(inputs[i]) * sum([int(q) for e in bingo for q in e if type(q) == type('a')])))
                         appended = True
                         break
+                    
                 if appended:
                     break
-                else:
-                    if len(bingo[0]) == 4 and len(bingo[1]) == 4 and len(bingo[2]) == 4 and len(bingo[3]) == 4 and len(bingo[4]) == 4:
-                        ans.append(i, inputs[i] * sum([q for e in bingo for q in e]))
+                
+                for a in range(5):
+                    if bingo[0][a] == [] and bingo[1][a] == [] and bingo[2][a] == [] and bingo[3][a] == [] and bingo[4][a] == []:
+                        ans.append((int(i), int(inputs[i]) * sum([int(q) for e in bingo for q in e if type(q) == type('a')])))
                         appended = True
+                        break
+                    
                 if appended:
                     break
             bingo = []
             cnt = 0
             appended = False
+print(file.read())
 ans.sort()
-print(ans[0][1])
+print(ans[-1][1], inputs[ans[-1][0]])
