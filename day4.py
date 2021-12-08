@@ -22,7 +22,6 @@ for a in file:
                     for y in range(len(bingo[x])):
                         if bingo[x][y] == inputs[i]:
                             bingo[x][y] = 'a'
-                for 
                 for w in bingo:
                     if w == []:
                         ans.append((i, inputs[i] * sum([q for e in bingo for q in e])))
@@ -40,4 +39,4 @@ for a in file:
             cnt = 0
             appended = False
 ans.sort()
-print(ans[0][1])
+print(ans)
