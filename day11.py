@@ -42,4 +42,5 @@ while True:
     
     if cnt == length:
         break
+    
 print(ans)
