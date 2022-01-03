@@ -13,6 +13,9 @@ risk[(0,0)] = 0
 visted = []
 
 def dik(x, y, cost):
+    print(x, y, cave[y][x], cost)
+    if [x,y] == [len(cave[0]) - 1, len(cave) - 1]:
+        return
     visted.append((x,y))
     temp = []
     if (x + 1, y) not in visted and (x+1, y) in risk:
@@ -35,8 +38,8 @@ def dik(x, y, cost):
         risk[(x, y-1)] = min(cost + cave[y - 1][x], risk[(x, y-1)])
         temp.append((risk[(x,y-1)], (x, y-1)))
         
-    dik(min(temp)[1][0], min(temp)[1][1], cost + min(temp)[0])
+    dik(min(temp)[1][0], min(temp)[1][1], min(temp)[0])
     
-dik(0,0, 0)
+dik(0, 0, 0)
 
 print(risk[(len(cave[0]) - 1, len(cave) - 1)])
